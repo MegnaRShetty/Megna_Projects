@@ -1,0 +1,85 @@
+package com.lnt.services;
+
+import java.io.File;
+import java.util.Date;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+
+import com.lnt.action.TaxPayerAction;
+public class XmlGeneration {
+	public static final String xmlFilePath = "D:\\XML Files\\Taxpayer.xml";
+
+	public void generateXml(TaxPayerAction taxpayer){
+
+	try {
+			
+		  DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
+		  DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
+		  Document document = documentBuilder.newDocument();
+		  
+		  Element root = document.createElement("PersonalInformation");
+		  document.appendChild(root);
+		  
+		  
+		  Element Name = document.createElement("TaxPayer");
+		  root.appendChild(Name);
+		  
+		  
+		  Element firstName = document.createElement("firstname");
+		  firstName.appendChild(document.createTextNode(taxpayer.getName()));
+		  Name.appendChild(firstName);
+		  
+		  Element address = document.createElement("address");
+		  address.appendChild(document.createTextNode(taxpayer.getAddress()));
+		  Name.appendChild(address);
+		  
+		  Element pan = document.createElement("pan");
+		  pan.appendChild(document.createTextNode(taxpayer.getPan()));
+		  Name.appendChild(pan);
+		  
+		  Element dob = document.createElement("dob");
+		  dob.appendChild(document.createTextNode(taxpayer.getDob()));
+		  Name.appendChild(dob);
+		  
+		  Element year = document.createElement("year");
+		  year.appendChild(document.createTextNode(taxpayer.getYear()));
+		  Name.appendChild(year);
+		  
+		  Element income = document.createElement("income");
+		  income.appendChild(document.createTextNode(taxpayer.getIncome()));
+		  Name.appendChild(income);
+		  
+		  Element tds = document.createElement("tds");
+		  tds.appendChild(document.createTextNode(taxpayer.getTds()));
+		  Name.appendChild(tds);
+		  
+		  Element tax = document.createElement("tax");
+		  tax.appendChild(document.createTextNode(taxpayer.getTax()));
+		  Name.appendChild(tax);
+		  
+		  TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		  Transformer transformer = transformerFactory.newTransformer();
+		  DOMSource domSource = new DOMSource(document);
+		  StreamResult streamResult = new StreamResult(new File(xmlFilePath));
+		  
+		  
+		  transformer.transform(domSource, streamResult);
+		  System.out.println("Done creating XML File");
+	
+	} catch (ParserConfigurationException pce) {
+		pce.printStackTrace();
+	} catch (TransformerException tfe) {
+		tfe.printStackTrace();
+	}
+}
+}

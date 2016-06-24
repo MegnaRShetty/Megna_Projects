@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+D:\Megna\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2741892307.index
+\StrutsMavenApp\src\main\resources
+D:\Megna\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3144134490.index
+\StrutsMavenApp\src\main\java

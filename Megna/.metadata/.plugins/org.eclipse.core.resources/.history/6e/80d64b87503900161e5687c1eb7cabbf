@@ -1,0 +1,13 @@
+package com.lnt;
+
+import java.util.Date;
+
+import com.lnt.action.TaxPayerAction;
+import com.lnt.services.XmlGeneration;
+
+public class TaxPayer {
+
+	TaxPayerAction taxpayer = new TaxPayerAction();
+	XmlGeneration xml = new XmlGeneration();
+	taxpayer.setName(name);
+}

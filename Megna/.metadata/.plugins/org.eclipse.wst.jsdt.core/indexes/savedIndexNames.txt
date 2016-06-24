@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+D:\Megna\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+457016690.index
+325871214.index
+404353077.index
+2323342540.index
+4211510265.index

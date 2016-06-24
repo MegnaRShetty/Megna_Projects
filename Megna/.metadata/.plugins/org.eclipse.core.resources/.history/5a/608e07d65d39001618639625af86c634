@@ -1,0 +1,11 @@
+package com.lnt;
+
+import com.lnt.action.TaxPayerAction;
+import com.lnt.services.XmlGeneration;
+
+public class TaxPayer {
+
+	TaxPayerAction taxpayer = new TaxPayerAction();
+	XmlGeneration xml = new XmlGeneration();
+	
+}

@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Personal Information</title>
+<script type="text/javascript">
+
+    function validateName() {
+        if( document.myForm.name.value == "" )
+        {
+           alert( "Please provide your name!" );
+           document.myForm.name.focus() ;
+           return false;
+        }
+
+        if( document.myForm.Address.value == "" )
+        {
+           alert( "Please provide your Address!" );
+           document.myForm.Address.focus() ;
+           return false;
+        }
+        
+        if( document.myForm.pan.value == "" ||
+        isNaN( document.myForm.pan.value ) ||
+        document.myForm.pan.value.length != 10 )
+        {
+           alert( "Please provide a PAN in the format #####." );
+           document.myForm.pan.focus() ;
+           return false;
+        }
+        
+        if( document.myForm.dob.value == "" )
+        {
+           alert( "Please provide your country!" );
+           return false;
+        }
+        return( true );
+     }
+        
+
+}
+
+</script>
+</head>
+<body>
+
+<h1>Personal Information</h1>
+
+	<s:form name="myForm" action="taxpayer">
+		<s:textfield name="name" id="name" label="Name"/>
+		<s:textarea name="address" id="address" label="Address" />
+		<s:textfield name="pan" id="pan" label="PAN"/>
+		<s:textfield name="dob" id="dob" label="DOB" />
+		<s:textfield name="year" id="year" label="Assessment Year" />
+		<s:textfield name="income" id="income" label="Income" />
+		<s:textfield name="tds" id="tds" label="TDS" />
+		<s:textfield name="tax" id="tax" label="Tax Deducted" />		
+		<s:submit value="Save" align="center" onclick="return validateName()"/>
+		<s:reset value="Cancel" align="center"/>
+	</s:form>
+
+</body>
+
+</html>
+

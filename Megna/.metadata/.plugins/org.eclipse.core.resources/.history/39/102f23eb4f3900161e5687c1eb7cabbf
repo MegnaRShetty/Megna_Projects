@@ -1,0 +1,89 @@
+package com.lnt.action;
+
+import java.util.Date;
+
+public class TaxPayerAction {
+	
+	private String name;
+	private String address;
+	private String pan;
+	private Date dob;
+	private String year;
+	private String income;
+	private String tds;
+	private String tax;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getPan() {
+		return pan;
+	}
+	public void setPan(String pan) {
+		this.pan = pan;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
+	public String getIncome() {
+		return income;
+	}
+	public void setIncome(String income) {
+		this.income = income;
+	}
+	public String getTds() {
+		return tds;
+	}
+	public void setTds(String tds) {
+		this.tds = tds;
+	}
+	public String getTax() {
+		return tax;
+	}
+	public void setTax(String tax) {
+		this.tax = tax;
+	}
+
+public TaxPayerAction() {
+	super();
+}
+public TaxPayerAction(String name, String address, String pan, Date dob,
+		String year, String income, String tds, String tax) {
+	super();
+	this.name = name;
+	this.address = address;
+	this.pan = pan;
+	this.dob = dob;
+	this.year = year;
+	this.income = income;
+	this.tds = tds;
+	this.tax = tax;
+}
+
+public String execute(){
+	XmlGeneration xml = new XmlGeneration();
+	TaxPayerAction taxpayer = new TaxPayerAction();
+	taxpayer.setName(name);
+	xml.generateXml(taxpayer);
+	return "SUCCESS";
+}
+
+
+}

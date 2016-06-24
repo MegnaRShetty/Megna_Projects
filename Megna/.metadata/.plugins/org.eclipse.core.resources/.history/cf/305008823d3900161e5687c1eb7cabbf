@@ -1,0 +1,17 @@
+package com.lnt;
+
+public class TaxPayer {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		TaxPayer taxpayer = new TaxPayer();
+		
+		
+		
+
+	}
+
+}

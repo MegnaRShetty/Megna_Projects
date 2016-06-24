@@ -1,0 +1,31 @@
+
+import java.util.Date;
+
+public class TaxPayerAction {
+
+public TaxPayerAction() {
+	super();
+}
+public TaxPayerAction(String name, String address, String pan, Date dob,
+		String year, String income, String tds, String tax) {
+	super();
+	this.name = name;
+	this.address = address;
+	this.pan = pan;
+	this.dob = dob;
+	this.year = year;
+	this.income = income;
+	this.tds = tds;
+	this.tax = tax;
+}
+
+public String execute(){
+	XmlGeneration xml = new XmlGeneration();
+	TaxPayerAction taxpayer = new TaxPayerAction();
+	taxpayer.setName(name);
+	xml.generateXml(taxpayer);
+	return "SUCCESS";
+}
+
+
+}

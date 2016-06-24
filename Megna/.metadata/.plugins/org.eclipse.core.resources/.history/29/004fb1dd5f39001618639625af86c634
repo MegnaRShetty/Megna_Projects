@@ -1,0 +1,11 @@
+package com.lnt;
+
+
+import com.lnt.services.XmlGeneration;
+
+public class TaxPayer {
+
+	TaxPayer taxpayer = new TaxPayer();
+	XmlGeneration xml = new XmlGeneration();
+	
+}
