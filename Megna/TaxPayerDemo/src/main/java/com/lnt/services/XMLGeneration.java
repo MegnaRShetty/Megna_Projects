@@ -19,7 +19,7 @@ import org.w3c.dom.Element;
 import com.lnt.action.TaxPayerAction;
 
 public class XMLGeneration {
-	public static final String xmlFilePath = "C:\\Users\\10613309\\Desktop\\Files\\xmlfile.xml";
+	public static final String xmlFilePath = "D:\\Files\\xmlfile.xml";
 
 	public void generateXml(TaxPayerAction taxpayer){
 
